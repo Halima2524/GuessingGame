@@ -23,15 +23,39 @@ public class GuessingGame
 
             while(guessedNumber!=ranNum && attempts<3)
             {
-                
-                if(guessedNumber>ranNum)
+                if(guessedNumber<ranNum)
                 {
-                System.out.println("too high");
+                    if(((double)(guessedNumber-ranNum)/interval )*100>=-20)
+                    {
+                    System.out.println("low, but very close ");
+                    }
+                    else if(((double)(guessedNumber-ranNum)/interval)*100 >=-30)
+                    {
+                        System.out.println("low");
+                    }
+                    else if(((double)(guessedNumber-ranNum)/interval)*100 <-30)
+                    {
+                    System.out.println("too low");
+
+                    }
                 }
                 else
                 {
-                    System.out.println("too low");
+                    if(((double)(guessedNumber-ranNum)/interval)*100 <=20)
+                    {
+                    System.out.println("high, but very close ");
+                    }
+                    else if(((double)(guessedNumber-ranNum)/interval)*100 <=30)
+                    {
+                        System.out.println("high");
+                    }
+                    else if(((double)(guessedNumber-ranNum)/interval)*100 >30)
+                    {
+                    System.out.println("too high");
+
+                    }
                 }
+
                 System.out.print("try again: ");
                 guessedNumber= myNum.nextInt();
                 attempts++;
