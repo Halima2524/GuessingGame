@@ -1,5 +1,5 @@
-import java .util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 public class GuessingGame
 {
     public static void main(String[] args)
@@ -21,7 +21,7 @@ public class GuessingGame
             
             int attempts=1;
 
-            while(guessedNumber!=ranNum && attempts<3)
+            while(guessedNumber!=ranNum && attempts<=Math.min(interval/5, 10))
             {
                 if(guessedNumber<ranNum)
                 {
